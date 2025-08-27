@@ -6,6 +6,11 @@ from nltk.corpus import stopwords
 from nltk.stem.porter import PorterStemmer
 import os
 
+nltk.download('punkt')       # standard tokenizer
+nltk.download('punkt_tab')   # tab tokenizer
+nltk.download('stopwords')   # stop words
+nltk.download('wordnet')     # WordNet
+
 BASE_PATH = os.path.join(os.getcwd(), 'models')
 tfidf = pickle.load(open(os.path.join(BASE_PATH, "tfidf_vectorizer.pkl"), "rb"))
 model = pickle.load(open(os.path.join(BASE_PATH, "model.pkl"), "rb"))
